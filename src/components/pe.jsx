@@ -1,16 +1,19 @@
-import React from "react";
-
 function PE() {
-  const message = "Welcome to React JS";
-  const course = "React Basics";
-  const college = "SVPCET";
+  const fruits = [
+    "Apple",
+    "Banana",
+    "Orange",
+    "Mango"
+  ];
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>Display Text using String Literals</h1>
-      <h2>{message}</h2>
-      <h3>{course}</h3>
-      <h4>{college}</h4>
+    <div style={{ textAlign: "center", marginTop: "30px" }}>
+      <h1>Fruit List</h1>
+      <ul style={{ listStyleType: "none", padding: 0 }}>
+        {fruits.map((fruit, index) => (
+          <li key={index}>{fruit}</li>
+        ))}
+      </ul>
     </div>
   );
 }

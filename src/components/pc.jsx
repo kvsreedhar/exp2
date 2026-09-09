@@ -1,16 +1,10 @@
-import React from "react";
+import Child from "./child";
 
 function PC() {
-  const handleClick = () => {
-    alert("Button Clicked");
-  };
-
   return (
-    <div>
-      <h1>Button Event Example</h1>
-      <button onClick={handleClick}>
-        Click Me
-      </button>
+    <div style={{ textAlign: "center", marginTop: "30px" }}>
+      <h1>React Props Example</h1>
+      <Child name="Hari babu" />
     </div>
   );
 }

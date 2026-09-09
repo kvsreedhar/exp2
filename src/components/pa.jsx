@@ -1,30 +1,17 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
-class PA extends Component {
-  constructor() {
-    super();
-    this.state = {
-      count: 0
-    };
-  }
+function PA() {
+  const [count, setCount] = useState(0);
 
-  increment = () => {
-    this.setState({
-      count: this.state.count + 1
-    });
-  };
-
-  render() {
-    return (
-      <div>
-        <h1>Class Counter</h1>
-        <h2>{this.state.count}</h2>
-        <button onClick={this.increment}>
-          Increment
-        </button>
-      </div>
-    );
-  }
+  return (
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h1>Counter Application</h1>
+      <h2>{count}</h2>
+      <button onClick={() => setCount(count + 1)}>
+        Increment
+      </button>
+    </div>
+  );
 }
 
 export default PA;

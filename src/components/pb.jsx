@@ -1,19 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function PB() {
-  const [count, setCount] = useState(0);
+  const [user, setUser] = useState(null);
 
-  const increment = () => {
-    setCount(count + 1);
-  };
+  useEffect(() => {
+    fetch("https://api.github.com/users/hari-785705")
+      .then((res) => res.json())
+      .then((data) => setUser(data))
+      .catch((err) => console.log(err));
+  }, []);
+
+  if (!user) {
+    return <p>Loading...</p>;
+  }
 
   return (
-    <div>
-      <h1>Functional Counter</h1>
-      <h2>{count}</h2>
-      <button onClick={increment}>
-        Increment
-      </button>
+    <div style={{ textAlign: "center", marginTop: "30px" }}>
+      <h1>{user.login}</h1>
+      <img
+        src={user.avatar_url}
+        alt="avatar"
+        width="120"
+      />
+      <p>{user.name}</p>
+      <a
+        href="https://github.com/hari-785705"
+        target="_blank"
+        rel="noreferrer"
+      >
+        GitHub Profile
+      </a>
     </div>
   );
 }

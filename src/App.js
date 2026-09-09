@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>React Lab Programs</h1>
+      <h1>Experiment 3 - Important Concepts of React.js</h1>
 
       <div className="button-container">
         <button onClick={() => setProgram("A")}>Program A</button>

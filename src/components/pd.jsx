@@ -1,21 +1,18 @@
 import React, { useState } from "react";
 
 function PD() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [name, setName] = useState("");
 
   return (
-    <div>
-      <h1>Conditional Rendering</h1>
-      {
-        loggedIn
-          ? <h2>Welcome User</h2>
-          : <h2>Please Login</h2>
-      }
-      <button
-        onClick={() => setLoggedIn(!loggedIn)}
-      >
-        Toggle
-      </button>
+    <div style={{ textAlign: "center", marginTop: "30px" }}>
+      <h1>React Form</h1>
+      <input
+        type="text"
+        placeholder="Enter Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      <h2>Hello {name}</h2>
     </div>
   );
 }
